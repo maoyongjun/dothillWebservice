@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="org.foxconn.dao.WebServiceDao">
+ 	<select id="getSSNStatus"  parameterType="map" statementType="CALLABLE">
+ 		<![CDATA[
+		    {call efoxsfcGetSSNSTATUSBySSN_dothill_sp
+		     (#{plant,mode=IN,jdbcType=VARCHAR},
+		      #{ssn,mode=IN,jdbcType=VARCHAR},
+		      #{retflag,mode=OUT,jdbcType=VARCHAR},
+		      #{retmsg,mode=OUT,jdbcType=VARCHAR}
+		     )
+		     }
+		]]>
+ 	</select>
+ 	
+	<select id="updateSSNStatus"  parameterType="map" statementType="CALLABLE">
+ 		<![CDATA[
+		    {call eFoxSFCUpdateSSNStatusBySSN_dothill
+		     (	  #{plantCode,mode=IN,javaType=String,jdbcType=VARCHAR},#{ssn,mode=IN,jdbcType=VARCHAR},
+		     #{fixtureID,mode=IN,jdbcType=VARCHAR},#{testResult,mode=IN,jdbcType=VARCHAR},
+		     #{errorCode,mode=IN,jdbcType=VARCHAR},#{failDetailReason,mode=IN,jdbcType=VARCHAR},
+		     #{testDatatime,mode=IN,jdbcType=VARCHAR},#{empID,mode=IN,jdbcType=VARCHAR},
+		     #{diag,mode=IN,jdbcType=VARCHAR},#{curStation,mode=IN,jdbcType=VARCHAR},
+		     #{lineName,mode=IN,jdbcType=VARCHAR},#{field1,mode=IN,jdbcType=VARCHAR},
+		     #{field2,mode=IN,jdbcType=VARCHAR},#{field3,mode=IN,jdbcType=VARCHAR},
+		     #{actionCode,mode=IN,jdbcType=VARCHAR},#{actionDesc,mode=IN,jdbcType=VARCHAR},
+		     #{replacePN,mode=IN,jdbcType=VARCHAR},#{failCSN,mode=IN,jdbcType=VARCHAR},
+		     #{newCSN,mode=IN,jdbcType=VARCHAR},#{field4,mode=IN,jdbcType=VARCHAR},
+		     #{field5,mode=IN,jdbcType=VARCHAR},#{field6,mode=IN,jdbcType=VARCHAR},
+		     #{retflag,mode=OUT,jdbcType=VARCHAR},#{retmsg,mode=OUT,jdbcType=VARCHAR})
+		     }
+		]]>
+ 	</select>
+ </mapper>        
+ 
