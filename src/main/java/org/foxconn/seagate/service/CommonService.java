@@ -4,6 +4,8 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.xml.ws.BindingType;
+import javax.xml.ws.soap.SOAPBinding;
 
 import org.foxconn.entity.SOAPModel;
 
@@ -14,7 +16,7 @@ import org.foxconn.entity.SOAPModel;
 * 创建时间：2018年5月12日 下午7:06:05
 */
 @WebService(name = "Service1", // 暴露服务名称
-targetNamespace = SOAPModel.namespace// 命名空间,一般是接口的包名倒序
+targetNamespace = SOAPModel.namespace// 命名空间,一般是接口的包名倒序,
 )
 public interface CommonService {
 @WebMethod
