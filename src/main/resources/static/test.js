@@ -3,12 +3,6 @@
 	$(function() {
 		$("#getSSNPost").click(getSSNPost);
 		$("#updateSSNPost").click(updateSSNPost);
-		$("#sfcIstpXMLDataDetailEditPOST").click(sfcIstpXMLDataDetailEditPOST);
-		$("#sfcIstpXMLDataDetailEditDELETE").click(sfcIstpXMLDataDetailEditDELETE);
-		$("#sfcIstpXMLDataDetailEditPUT").click(sfcIstpXMLDataDetailEditPUT);
-		$("#sfcIstpXMLDataDetailEditGET").click(sfcIstpXMLDataDetailEditGET);
-		$("#sfcIstpXMLDataDetailEditGETXML").click(sfcIstpXMLDataDetailEditGETXML);
-		$("#sfcIstpXMLDataDetailEditArea").hide();
 		$("#updateSSNArea").hide();
 		$("#getSSNArea").hide();
 	  }

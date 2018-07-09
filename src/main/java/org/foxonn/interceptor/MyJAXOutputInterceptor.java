@@ -35,8 +35,8 @@ public class MyJAXOutputInterceptor extends AbstractPhaseInterceptor<Message> {
 			String xml = new String(newByteArrayOutput.toByteArray(),"UTF-8");//输出流转化为String
 			xml = "<?xml version='1.0' encoding='UTF-8'?>" + xml;
 			xml = xml.replaceAll("soap:", "soapenv:").replaceAll(":soap", ":soapenv").replaceAll("ns2:", "ns:")
-					.replaceAll(":ns2", ":ns").replaceAll("return>", "ns:return>").replaceAll("&#xd;", "")
-					.replaceFirst("<soapenv:Body>", "<soapenv:Header/><soapenv:Body>").replace("<String>", "").replace("</String>", "");
+					.replaceAll(":ns2", ":ns").replaceAll("return>", "ns:return>").replaceAll("<return", "<ns:return").replaceAll("&#xd;", "")
+					.replaceFirst("<soapenv:Body>", "<soapenv:Header/><soapenv:Body>").replace("<String>", "<ns:return>").replace("</String>", "</ns:return>");
 			ByteArrayInputStream byteArrayInput = new ByteArrayInputStream(xml.getBytes("UTF-8"));//String转化为输入流
 			IOUtils.copy(byteArrayInput, os)	;//写回到输出流中
 		} catch (Exception e) {
