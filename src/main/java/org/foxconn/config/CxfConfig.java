@@ -35,11 +35,8 @@ public class CxfConfig {
 	public Endpoint endpoint() {
 		EndpointImpl endpoint = new EndpointImpl(bus, commonService);
 		endpoint.publish(SOAPModel.address);
-	
 		MyJAXOutputInterceptor jAXRSOutInterceptor = new MyJAXOutputInterceptor(Phase.PRE_STREAM);
 		endpoint.getOutInterceptors().add(jAXRSOutInterceptor);
-		JaxWsServiceFactoryBean  fa = endpoint.getServiceFactory();
-		fa.getConfigurations().add(new MethodNameSoapActionServiceConfiguration());
 		LoggingInInterceptor loggingInInterceptor = new LoggingInInterceptor();
 		LoggingOutInterceptor loggingOutInterceptor = new LoggingOutInterceptor();;
 		endpoint.getOutInterceptors().add(loggingOutInterceptor);

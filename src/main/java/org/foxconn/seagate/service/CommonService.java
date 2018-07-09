@@ -19,11 +19,11 @@ import org.foxconn.entity.SOAPModel;
 targetNamespace = SOAPModel.namespace// 命名空间,一般是接口的包名倒序,
 )
 public interface CommonService {
-@WebMethod
+@WebMethod(action="urn:getSSNStatusByInput")
 @WebResult(name = "String", targetNamespace = "")
 public String getSSNStatusByInput(@WebParam(name="strPlantCode",targetNamespace=SOAPModel.namespace)String strPlantCode,@WebParam(name = "strSSN",targetNamespace=SOAPModel.namespace) String strSSN);
 
-@WebMethod
+@WebMethod(action="urn:updateSSNStatusByInput")
 @WebResult(name = "String", targetNamespace ="")
 public String updateSSNStatusByInput(
 		@WebParam(name  = "PlantCode",targetNamespace=SOAPModel.namespace)String PlantCode,
