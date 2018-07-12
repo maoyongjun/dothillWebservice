@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
-@RequestMapping("/webservice/services/Service1.Service1HttpSoap12Endpoint")
+@RequestMapping("/restServices/Service1")
 public class RestService{
 	Logger logger = Logger.getLogger(RestService.class);
 	@Resource
@@ -23,8 +23,10 @@ public class RestService{
 	@RequestMapping(value="/getSSNStatusByInput", method=RequestMethod.POST,produces = "application/xml; charset=UTF-8") 
 	public String getSSN(String strPlantCode,String strSSN) {
 		logger.info(request.getRemoteAddr()+":"+"strPlantCode:"+strPlantCode+",strSSN:"+strSSN);
-		String result_pre="<ns:getSSNStatusByInputResponse xmlns:ns=\"http://impl.service.seagate.foxconn.org\"><ns:return>";
-		String result_suf="</ns:return></ns:getSSNStatusByInputResponse>";	
+//		String result_pre="<ns:getSSNStatusByInputResponse xmlns:ns=\"http://impl.service.seagate.foxconn.org\"><ns:return>";
+//		String result_suf="</ns:return></ns:getSSNStatusByInputResponse>";	
+		String result_pre="";
+		String result_suf="";
 		String result =service.getSSNStatusByInput(strPlantCode, strSSN);
 		return result_pre+result+result_suf;
 		
@@ -47,8 +49,10 @@ public class RestService{
 			String Field2,
 			String Field3) {
 		logger.info(request.getRemoteAddr()+":"+"PlantCode:"+PlantCode+",SSN:"+SSN);
-		String result_pre="<ns:updateSSNStatusByInputResponse xmlns:ns=\"http://impl.service.seagate.foxconn.org\"><ns:return>";
-		String result_suf="</ns:return></ns:updateSSNStatusByInputResponse>";	
+//		String result_pre="<ns:updateSSNStatusByInputResponse xmlns:ns=\"http://impl.service.seagate.foxconn.org\"><ns:return>";
+//		String result_suf="</ns:return></ns:updateSSNStatusByInputResponse>";	
+		String result_pre="";
+		String result_suf="";
 		String result =service.updateSSNStatusByInput(PlantCode, SSN, FixtureID, TestResult, ErrorCode, FailDetailReason, TestDatatime, EMPID, DIAG, CurStation, LineName, Field1, Field2, Field3);
 		return result_pre+result+result_suf;
 	}

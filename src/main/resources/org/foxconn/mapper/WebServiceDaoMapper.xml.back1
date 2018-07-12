@@ -2,11 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
  <mapper namespace="org.foxconn.dao.WebServiceDao">
- 	<select id="getSSNStatus"  parameterType="map"  resultType="string"  statementType="CALLABLE">
+ 	<select id="getSSNStatus"  parameterType="map"   statementType="CALLABLE">
  		<![CDATA[
-		    {call efoxsfcGetSSNSTATUSBySSN_dothill_sp
+		    {call efoxsfcGetSSNSTATUSBySSN_dothill_sp_test
 		     (#{plant,mode=IN,jdbcType=VARCHAR},
-		      #{ssn,mode=IN,jdbcType=VARCHAR}
+		      #{ssn,mode=IN,jdbcType=VARCHAR},
+		      #{retflag,mode=OUT,jdbcType=VARCHAR},
+		      #{retmsg,mode=OUT,jdbcType=VARCHAR}
 
 		      
 		     )

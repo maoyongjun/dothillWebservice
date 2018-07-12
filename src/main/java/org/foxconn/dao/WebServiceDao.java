@@ -12,6 +12,7 @@ import org.foxconn.entity.Msg;
 */
 @Mapper
 public interface WebServiceDao {
-	public void getSSNStatus(Map<String,String> map); 
+	public String getSSNStatus(Map<String,String> map); 
+//	public Map<String,String>  getSSNStatus(Map<String,String> map); 
 	public void updateSSNStatus(Map<String,String> map);
 }
