@@ -42,12 +42,12 @@ public String getSSNStatusByInput(@WebParam(name="strPlantCode")String strPlantC
 	Map<String,String> map = new HashMap<String,String>();
 	map.put("plant", strPlantCode);
 	map.put("ssn", strSSN);
-//	map.put("retflag","");
-//	map.put("retmsg","");
+	map.put("retflag","");
+	map.put("retmsg","");
 	String result="";
 	try {
-		result = dao.getSSNStatus( map);
-//		 result = map.get("retmsg");
+		 dao.getSSNStatus( map);
+		 result = map.get("retmsg");
 	} catch (Exception e) {
 		String errorMsg = e.getCause().toString();
 		logger.error(errorMsg);
