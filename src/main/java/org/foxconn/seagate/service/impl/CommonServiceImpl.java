@@ -48,6 +48,7 @@ public String getSSNStatusByInput(@WebParam(name="strPlantCode")String strPlantC
 	try {
 		 dao.getSSNStatus( map);
 		 result = map.get("retmsg");
+		 result = XmlUtil.formateXML(result).replace("<?xml version=\"1.0\" encoding=\"utf-8\"?>", "");
 	} catch (Exception e) {
 		String errorMsg = e.getCause().toString();
 		logger.error(errorMsg);
@@ -128,7 +129,7 @@ public String updateSSNStatusByInput(String PlantCode, String SSN, String Fixtur
 	return map.get("retmsg");
 }
 private void writeLog(String strSSN,String xml){
-	xml = XmlUtil.formateXML(xml);
+	
 	FileWriter fileWriter=null;
 	String baseLocalDir = "c:\\textXmlBackUp_dothill\\";
 	File file = new File(baseLocalDir);

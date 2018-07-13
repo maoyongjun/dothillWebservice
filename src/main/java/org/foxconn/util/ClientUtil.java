@@ -60,7 +60,8 @@ public class ClientUtil {
 	
 //	public static void main(String[] args) {
 //	try {
-//		getResult("1234");
+//		ClientUtil util = new ClientUtil();
+//		util.getResult("1234");
 //	} catch (Exception e) {
 //		e.printStackTrace();
 //	}
