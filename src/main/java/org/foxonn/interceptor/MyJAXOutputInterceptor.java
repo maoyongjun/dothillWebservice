@@ -40,7 +40,7 @@ public class MyJAXOutputInterceptor extends AbstractPhaseInterceptor<Message> {
 //				xml = xml.replaceAll("soap:", "soapenv:").replaceAll(":soap", ":soapenv").replaceAll("ns2:", "ns:")
 //						.replaceAll(":ns2", ":ns").replaceAll("return>", "ns:return>").replaceAll("<return", "<ns:return").replaceAll("&#xd;", "")
 //						.replaceFirst("<soapenv:Body>", "<soapenv:Header/><soapenv:Body>").replace("<String>", "<ns:return>").replace("</String>", "</ns:return>");
-				xml= xml.replace("<String>", "<ns:return>").replace("</String>", "</ns:return>");
+				xml= xml.replace("<String>", "<ns2:return>").replace("</String>", "</ns2:return>");
 			}
 			xml = "<?xml version='1.0' encoding='UTF-8'?>" + xml;
 			ByteArrayInputStream byteArrayInput = new ByteArrayInputStream(xml.getBytes("UTF-8"));//String转化为输入流

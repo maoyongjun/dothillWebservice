@@ -48,7 +48,7 @@ public String getSSNStatusByInput(@WebParam(name="strPlantCode")String strPlantC
 	try {
 		 dao.getSSNStatus( map);
 		 result = map.get("retmsg");
-		 result = XmlUtil.formateXML(result);//.replace("<?xml version=\"1.0\" encoding=\"utf-8\"?>", "");
+		 result = XmlUtil.formateXML(result).replace("<?xml version=\"1.0\" encoding=\"utf-8\"?>", "");
 	} catch (Exception e) {
 		String errorMsg = e.getCause().toString();
 		logger.error(errorMsg);
