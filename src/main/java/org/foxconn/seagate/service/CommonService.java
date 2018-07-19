@@ -23,6 +23,12 @@ public interface CommonService {
 @WebResult(name = "String", targetNamespace = "")
 public String getSSNStatusByInput(@WebParam(name="strPlantCode",targetNamespace=SOAPModel.namespace)String strPlantCode,@WebParam(name = "strSSN",targetNamespace=SOAPModel.namespace) String strSSN);
 
+@WebMethod(action=SOAPModel.namespace+"/getSSNStatusXmlDataByInput")
+@WebResult(name = "String", targetNamespace = "")
+public String getSSNStatusXmlDataByInput(@WebParam(name="strPlantCode",targetNamespace=SOAPModel.namespace)String strPlantCode,@WebParam(name = "strSSN",targetNamespace=SOAPModel.namespace) String strSSN);
+
+
+
 @WebMethod(action=SOAPModel.namespace+"/updateSSNStatusByInput")
 @WebResult(name = "String", targetNamespace ="")
 public String updateSSNStatusByInput(
