@@ -20,7 +20,7 @@ public class RestService{
 	@Resource
 	HttpServletRequest request;
 	
-	@RequestMapping(value="/getSSNStatusByInput", method=RequestMethod.POST,produces = "application/xml; charset=UTF-8") 
+	@RequestMapping(value="/getSSNStatusXmlDataByInput", method=RequestMethod.POST,produces = "application/xml; charset=UTF-8") 
 	public String getSSN(String strPlantCode,String strSSN) {
 		logger.info(request.getRemoteAddr()+":"+"strPlantCode:"+strPlantCode+",strSSN:"+strSSN);
 //		String result_pre="<ns:getSSNStatusByInputResponse xmlns:ns=\"http://impl.service.seagate.foxconn.org\"><ns:return>";

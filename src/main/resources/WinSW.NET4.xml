@@ -3,6 +3,6 @@
       <name>dothillWebService</name>
       <description>To start my app as a service.</description>
       <executable>java</executable>
-      <arguments>-Xmx512m -jar D:\dothillWebservice-0.0.1-SNAPSHOT.jar --server.port=80</arguments>
+      <arguments>-Xmx512m -jar D:\dothillWebserce_java\dothillWebservice-0.0.1-SNAPSHOT.jar --server.port=8082</arguments>
       <logmode>rotate</logmode>
 </service>
