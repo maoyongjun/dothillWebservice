@@ -13,7 +13,7 @@ import org.apache.cxf.wsdl.service.factory.AbstractServiceConfiguration;
 import org.apache.cxf.wsdl.service.factory.MethodNameSoapActionServiceConfiguration;
 import org.foxconn.entity.SOAPModel;
 import org.foxconn.seagate.service.CommonService;
-import org.foxonn.interceptor.MyJAXOutputInterceptor;
+import org.foxconn.interceptor.MyJAXOutputInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

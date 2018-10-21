@@ -1,4 +1,4 @@
-package org.foxonn.interceptor;
+package org.foxconn.interceptor;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
